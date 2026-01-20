@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #ffffff;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;   /* odstęp między przyciskami */
+}
+.top-buttons a button,
+.top-buttons button {
+    margin: 0;
+    background-color: #2a5d34;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+.top-buttons span {
+    margin-right: 10px;
+    color: #2a5d34;
+    font-weight: bold;
+}
+main {
+    padding: 20px;
+}
+section {
+    margin-bottom: 40px;
+}
+.blok {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+footer p{
+    background-color: #2a5d34;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+.menu {
+
+    padding-top: 2px;
+    text-align: center;
+    float: left;
+
+}
+.menu a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #2e8b57;
+    font-weight: bold;
+    font-size: xx-large;
+
+}
+.foto {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+/*galeria*/
+.gallery-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 30px;
+}
+.gallery-grid img {
+    width: 100%; height: 200px; object-fit: cover;
+    cursor: pointer; border-radius: 4px;
+    transition: transform 0.3s;
+}
+.gallery-grid img:hover { transform: scale(1.05);}
+#lightbox-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 10000;
+}
+#lightbox-overlay img { max-width: 90vw; max-height: 90vh; border-radius: 8px; }
+#lightbox-prev, #lightbox-next, #lightbox-close {
+    position: fixed; color: #fff; font-size: 2.5rem; background: rgba(0,0,0,0.45);
+    border: none; padding: 12px; cursor: pointer; z-index: 11000; border-radius: 50%;
+}
+#lightbox-prev { left: 30px; top: 50%; transform: translateY(-50%);}
+#lightbox-next { right: 30px; top: 50%; transform: translateY(-50%);}
+#lightbox-close { top: 30px; right: 30px; font-size: 2rem;}
+
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+nav ul li {
+    margin-right: 20px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*mieszkancy*/
+.building-list, .staircase-list, .apartment-list { margin: 35px 0 0 0; padding: 0; }
+.building-list li, .staircase-list li { margin-bottom: 16px; }
+.building-link, .staircase-link {
+    display: inline-block; padding: 13px 28px; font-size:1.12em; color: #2a5d34;
+    background: #e6f4ea; border-radius: 7px; text-decoration: none; cursor: pointer; font-weight: bold; border: 0;
+    transition: background .15s;
+}
+.building-link:hover, .staircase-link:hover { background: #cdecd5; }
+.back-link { margin-top: 24px; display: inline-block; color: #2a5d34; cursor:pointer; text-decoration:underline;}
+.apartment-box { background: #f8f8f8; margin-bottom: 18px; padding: 15px; border-radius: 7px; }
+.apartment-num { font-weight: bold; color: #2a5d34;}
+.residents { margin:0; padding:0 0 0 16px; }
+.resident-row { display: flex; align-items: center; gap: 10px; margin-bottom: 4px;}
+.delete-btn {
+    background: #e7492e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 0.97em;
+    cursor: pointer;
+}
+.add-resident-form {
+    margin-top: 10px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.add-resident-form input {
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1px solid #aaa;
+    font-size: 1em;
+}
+.add-resident-form button {
+    background: #2a5d34; color: #fff; border: none; border-radius: 3px; padding: 5px 13px; font-size: 1em; cursor: pointer;
+}
+@media (max-width: 700px) {
+    .building-link, .staircase-link { padding: 9px 7px; font-size: 1em; }
+    .apartment-box { padding: 10px; }
+}
+
+/* ========== STYLE DLA KONTAKT.JSP ========== */
+
+.contact-box {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+    max-width: 600px;
+    margin: 40px auto;
+}
+.contact-section h2 {
+    color: #2a5d34;
+    margin-bottom: 20px;
+}
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+.contact-list li {
+    margin-bottom: 14px;
+    font-size: 1.1em;
+}
+.contact-list span {
+    font-weight: bold;
+    color: #2a5d34;
+    width: 140px;
+    display: inline-block;
+}
+.emergency {
+    background: #f4e7e7;
+    border-left: 5px solid #ce2626;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    color: #700c0c;
+}
+.fast-report-form {
+    background: #f9f9f9;
+    border-radius: 7px;
+    margin-top: 28px;
+    padding: 18px 10px;
+    box-shadow: 0 2px 4px rgba(44,93,52,0.06);
+}
+.fast-report-form h3 { color: #2a5d34; font-size: 1.2em; margin-bottom: 10px;}
+.fast-report-form input, .fast-report-form textarea {
+    width: 100%; margin-bottom: 10px; padding: 7px; border-radius: 4px; border: 1px solid #b2b2b2; font-size: 1em;
+}
+.fast-report-form button {
+    background: #2a5d34; color: #fff; border: none; padding: 9px 18px;
+    border-radius: 4px; font-size: 1em; cursor: pointer;
+}
+.msg-confirm {
+    background: #e6f4ea; border-left: 4px solid #2a5d34; color: #2a5d34;
+    padding: 10px 14px; border-radius: 5px; margin-top: 10px; margin-bottom: 0;
+}
+@media (max-width: 700px) {
+    .contact-box { padding: 18px 7px; }
+}
+iframe {
+    max-width: 100%;
+}

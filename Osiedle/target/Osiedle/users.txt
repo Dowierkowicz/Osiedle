@@ -1,0 +1,10 @@
+admin:1234
+jan:haslo123
+ewa:qwerty
+bruno:12345
+gosia:gosia1
+kuba:kuba1234
+Dawid:dawid1
+
+tomcat:tomcat1
+dawowi:dawid1
