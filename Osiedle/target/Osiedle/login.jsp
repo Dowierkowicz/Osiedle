@@ -15,6 +15,7 @@
     <div> <a href="index.jsp">
         <img src="logo.png" alt="Osiedle" width="200" height="200">
     </a></div>
+    <%@ include file="/WEB-INF/jsp/clock.jspf" %>
 
     <!-- Menu nawigacyjne: linki do wszystkich podstron -->
     <div class="menu">

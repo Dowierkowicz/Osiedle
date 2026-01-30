@@ -13,6 +13,7 @@
     <div> <a href="index.jsp">
         <img src="logo.png" alt="Osiedle" width="200" height="200">
     </a></div>
+    <%@ include file="/WEB-INF/jsp/clock.jspf" %>
 
     <!-- Menu nawigacyjne po wszystkich podstronach -->
     <div class="menu">
@@ -86,7 +87,7 @@
                     %>
                     <button onclick="showEdit(<%= id %>)">Edytuj</button>
                     <form action="${pageContext.request.contextPath}/deleteOgloszenie" method="post">
-                          onsubmit="return confirm('Na pewno usunąć to ogłoszenie?');">
+                          Na pewno usunąć to ogłoszenie?
                         <input type="hidden" name="id" value="<%= id %>">
                         <button type="submit">Usuń</button>
                     </form>
@@ -150,7 +151,7 @@
                             <em><%= cAutor %></em>: <%= cText %>
                             <% if (user != null && user.equals(cAutor)) { %>
                             <form action="${pageContext.request.contextPath}/deleteComment" method="post">
-                            onsubmit="return confirm('Usunąć komentarz?');">
+                            Usunąć komentarz?
                                 <input type="hidden" name="id" value="<%= id %>">
                                 <input type="hidden" name="author" value="<%= cAutor %>">
                                 <input type="hidden" name="text" value="<%= cText %>">

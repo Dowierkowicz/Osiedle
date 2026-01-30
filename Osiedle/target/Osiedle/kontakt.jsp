@@ -20,6 +20,9 @@
             <img src="logo.png" alt="Osiedle" width="200" height="200">
         </a>
     </div>
+
+    <%@ include file="/WEB-INF/jsp/clock.jspf" %>
+
     <!-- Menu nawigacyjne z odnośnikami do wszystkich podstron -->
     <div class="menu">
         <a href="index.jsp">Strona główna</a>
