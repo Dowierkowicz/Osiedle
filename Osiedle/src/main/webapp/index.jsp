@@ -1,9 +1,11 @@
-<%@ page session="true" contentType="text/html;charset=UTF-8" %>
+<%@ page session="true" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"  %>
 <%@ page import="jakarta.servlet.http.HttpSession" %>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Strona Osiedla</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -15,6 +17,11 @@
             <img src="logo.png" alt="Osiedle" width="200" height="200">
         </a>
     </div>
+
+
+    <%@ include file="/WEB-INF/jsp/clock.jspf" %>
+
+
 
     <!-- Menu główne: nawigacja po stronie osiedla -->
     <div class="menu">
@@ -52,7 +59,7 @@
     <nav>
         <div class="foto">
             <a href="galeria.jsp">
-                <img src="logo2.png" alt="Osiedle" width=100% height="500">
+                <img src="logo2.png" alt="Osiedle" style="width:100%; height:500px;">
             </a>
         </div>
     </nav>

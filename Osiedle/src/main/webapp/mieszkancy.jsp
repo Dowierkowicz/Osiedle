@@ -20,6 +20,8 @@
 <header>
     <!-- Logo osiedla -->
     <div><img src="logo.png" alt="Osiedle" width="200" height="200"></div>
+    <%@ include file="/WEB-INF/jsp/clock.jspf" %>
+
     <!-- Menu nawigacyjne -->
     <div class="menu">
         <a href="index.jsp">Strona główna</a>

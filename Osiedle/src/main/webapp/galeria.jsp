@@ -16,6 +16,10 @@
     <!-- Logo osiedla -->
     <div><img src="logo.png" alt="Osiedle" width="200" height="200"></div>
     <!-- Menu nawigacyjne po stronie -->
+
+    <%@ include file="/WEB-INF/jsp/clock.jspf" %>
+
+
     <div class="menu">
         <a href="index.jsp">Strona główna</a>
         <a href="ogloszenia.jsp">Ogłoszenia</a>
