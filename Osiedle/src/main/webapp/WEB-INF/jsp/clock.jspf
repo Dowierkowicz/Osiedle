@@ -1,0 +1,40 @@
+<div class="clock-box">
+    <div class="clock-time" id="clock-time">--:--:--</div>
+    <div class="clock-date" id="clock-date">---</div>
+</div>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+
+        // GODZINA
+        let h = now.getHours();
+        let m = now.getMinutes();
+        let s = now.getSeconds();
+
+        h = h < 10 ? "0" + h : h;
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+
+        document.getElementById("clock-time").innerText =
+            h + ":" + m + ":" + s;
+
+        // DATA + DZIEŃ TYGODNIA
+        const days = [
+            "Niedziela", "Poniedziałek", "Wtorek",
+            "Środa", "Czwartek", "Piatek", "Sobota"
+        ];
+
+        const dayName = days[now.getDay()];
+        const dateString =
+            dayName + ", " +
+            now.getDate() + "." +
+            (now.getMonth() + 1) + "." +
+            now.getFullYear();
+
+        document.getElementById("clock-date").innerText = dateString;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
