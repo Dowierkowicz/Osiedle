@@ -143,7 +143,7 @@
 
                 return (
                     <div className="todo-app">
-                        <h2>📝 Lista zadań mieszkańca </h2>
+                        <h2>📝 Lista zadań mieszkańców </h2>
 
                         <input
                             value={text}
