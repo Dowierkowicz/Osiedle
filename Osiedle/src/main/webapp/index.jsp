@@ -66,6 +66,113 @@
     <br>
     <!-- Sekcja z najważniejszymi blokami treści -->
     <section>
+        <div id="react-todo"></div>
+
+        <!-- React CDN -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+        <style>
+            .todo-app {
+                max-width: 420px;
+                margin: 20px auto 40px auto;
+                padding: 20px;
+                background: #f4f4f4;
+                border-radius: 12px;
+                font-family: Arial, sans-serif;
+            }
+
+            .todo-app h2 {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .todo-app input {
+                width: 70%;
+                padding: 6px;
+            }
+
+            .todo-app button {
+                padding: 6px 10px;
+                margin-left: 4px;
+                cursor: pointer;
+            }
+
+            .todo-item {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 8px;
+                background: #fff;
+                padding: 6px 10px;
+                border-radius: 6px;
+            }
+        </style>
+
+        <script type="text/babel">
+            const { useState } = React;
+
+            function TodoApp() {
+                const [tasks, setTasks] = useState([]);
+                const [text, setText] = useState("");
+                const [editId, setEditId] = useState(null);
+
+                function addOrEditTask() {
+                    if (text.trim() === "") return;
+
+                    if (editId !== null) {
+                        setTasks(tasks.map(t =>
+                            t.id === editId ? { ...t, name: text } : t
+                        ));
+                        setEditId(null);
+                    } else {
+                        setTasks([...tasks, { id: Date.now(), name: text }]);
+                    }
+
+                    setText("");
+                }
+
+                function deleteTask(id) {
+                    setTasks(tasks.filter(t => t.id !== id));
+                }
+
+                function editTask(task) {
+                    setText(task.name);
+                    setEditId(task.id);
+                }
+
+                return (
+                    <div className="todo-app">
+                        <h2>📝 Lista zadań mieszkańca (React)</h2>
+
+                        <input
+                            value={text}
+                            onChange={e => setText(e.target.value)}
+                            placeholder="Wpisz zadanie..."
+                        />
+                        <button onClick={addOrEditTask}>
+                            {editId ? "Zapisz" : "Dodaj"}
+                        </button>
+
+                        {tasks.map(task => (
+                            <div className="todo-item" key={task.id}>
+                                <span>{task.name}</span>
+                                <div>
+                                    <button onClick={() => editTask(task)}>✏️</button>
+                                    <button onClick={() => deleteTask(task.id)}>❌</button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                );
+            }
+
+            ReactDOM.createRoot(
+                document.getElementById("react-todo")
+            ).render(<TodoApp />);
+        </script>
+
+
         <!-- Blok powitalny -->
         <div class="blok">
             <h3>Witamy na stronie naszego osiedla!</h3>
